@@ -93,7 +93,7 @@ function LoginPage() {
       password: password.value,
     });
 
-    fetch("http://localhost:8080/users/insert", {
+    fetch("http://localhost:8081/users/insert", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: data,
@@ -145,7 +145,7 @@ function LoginPage() {
       password: password.value,
     });
 
-    fetch("http://localhost:8080/users/signin", {
+    fetch("http://localhost:8081/users/signin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: data,
@@ -157,7 +157,7 @@ function LoginPage() {
           showMessage("Login successful!", "success");
           localStorage.setItem("token", resData[1]);
           // Get username using the token
-          fetch("http://localhost:8080/users/getusername", {
+          fetch("http://localhost:8081/users/getusername", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ csrid: resData[1] }),
